@@ -1,0 +1,73 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prezentare personală</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<script>
+    alert("Hello World!");
+</script>
+
+<header>
+    <h1>Ion Popescu</h1>
+    <p>Facultatea de Informatică</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#about">Despre</a></li>
+        <li><a href="#education">Educație</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<main>
+
+    <section id="about">
+        <h2>Despre mine</h2>
+        <img src="images/profil.jpg" alt="Poza de profil Ion Popescu" loading="lazy">
+        <p>Sunt student pasionat de programare web și tehnologie.</p>
+    </section>
+
+    <section id="education">
+        <h2>Educație</h2>
+        <ol>
+            <li>Liceu - Mate Info</li>
+            <li>Facultatea de Informatică</li>
+        </ol>
+    </section>
+
+</main>
+
+<aside>
+    <h3>Hobby-uri</h3>
+    <p>Gaming, sală, muzică</p>
+</aside>
+
+<footer id="contact">
+    <h2>Contact</h2>
+
+    <form>
+        <label for="name">Nume:</label>
+        <input id="name" type="text" autocomplete="name">
+
+        <label for="email">Email:</label>
+        <input id="email" type="email" autocomplete="email" required>
+
+        <label for="message">Mesaj:</label>
+        <textarea id="message" minlength="10" required></textarea>
+
+        <button type="submit" onclick="submitForm()">Trimite</button>
+    </form>
+
+    <p>© 2026 Ion Popescu</p>
+
+    <script src="js/contact_form.js"></script>
+</footer>
+
+</body>
+</html>

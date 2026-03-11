@@ -101,3 +101,27 @@ footer {
     background: var(--secondary-color);
     color: white;
 }
+
+/* --- Dark Mode Logic --- */
+
+body.dark-mode {
+    --background-color: #1a1a2e; /* Fundal închis */
+    --text-color: #e0e0e0;       /* Text deschis */
+    --secondary-color: #0f0f1a;  /* Header/Footer mai închise */
+}
+
+/* Ajustăm elementele care nu folosesc variabile pentru a se vedea bine pe dark */
+body.dark-mode aside {
+    background: #252545;
+    color: #e0e0e0;
+}
+
+/* Opțional: o tranziție fină să nu "sară" culorile brusc */
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.hidden { display: none; }
+main h2 { cursor: pointer; }
+main h2::before { content: '▼ '; font-size: 0.7em; }
+main h2.collapsed::before { content: '▶ '; }

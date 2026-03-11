@@ -22,25 +22,24 @@
         <li><a href="#about">Despre</a></li>
         <li><a href="#education">Educație</a></li>
         <li><a href="#contact">Contact</a></li>
+        
     </ul>
 </nav>
 
 <main>
-
     <section id="about">
         <h2>Despre mine</h2>
-        <img src="images/profil.jpg" alt="Poza de profil Ion Popescu" loading="lazy">
-        <p>Sunt student pasionat de programare web și tehnologie.</p>
-    </section>
+        <div class="content"> <img src="images/profil.jpg" alt="Poza de profil Ion Popescu" loading="lazy">
+            <p>Sunt student pasionat de programare web și tehnologie.</p>
+        </div> </section>
 
     <section id="education">
         <h2>Educație</h2>
-        <ol>
-            <li>Liceu - Mate Info</li>
-            <li>Facultatea de Informatică</li>
-        </ol>
-    </section>
-
+        <div class="content"> <ol>
+                <li>Liceu - Mate Info (2018 - 2022)</li>
+                <li>Facultatea de Inginerie (2089 - 2300)</li>
+            </ol>
+        </div> </section>
 </main>
 
 <aside>
@@ -50,8 +49,7 @@
 
 <footer id="contact">
     <h2>Contact</h2>
-
-    <form>
+    <form id="contact-form"> 
         <label for="name">Nume:</label>
         <input id="name" type="text" autocomplete="name">
 
@@ -61,13 +59,24 @@
         <label for="message">Mesaj:</label>
         <textarea id="message" minlength="10" required></textarea>
 
-        <button type="submit" onclick="submitForm()">Trimite</button>
+        <button type="submit">Trimite</button>
+        <span id="feedback-message"></span> 
     </form>
-
     <p>© 2026 Ion Popescu</p>
-
-    <script src="js/contact_form.js"></script>
 </footer>
+
+<nav>
+    <ul>
+        <li><a href="#about">Despre</a></li>
+        <li><a href="#education">Educație</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button id="theme-toggle">🌙 Dark Mode</button></li>
+    </ul>
+</nav>
+
+<script src="js/main.js"></script>
+<script src="js/contact_form.js"></script>
+<script src="js/array.js"></script>
 
 </body>
 </html>

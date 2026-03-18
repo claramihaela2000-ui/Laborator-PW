@@ -1,82 +1,13 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prezentare personală</title>
-
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-
-<script>
-    alert("Hello World!");
-</script>
-
-<header>
-    <h1>Ion Popescu</h1>
-    <p>Facultatea de Informatică</p>
-</header>
-
-<nav>
-    <ul>
-        <li><a href="#about">Despre</a></li>
-        <li><a href="#education">Educație</a></li>
-        <li><a href="#contact">Contact</a></li>
-        
-    </ul>
-</nav>
-
-<main>
-    <section id="about">
-        <h2>Despre mine</h2>
-        <div class="content"> <img src="images/profil.jpg" alt="Poza de profil Ion Popescu" loading="lazy">
-            <p>Sunt student pasionat de programare web și tehnologie.</p>
-        </div> </section>
-
-    <section id="education">
-        <h2>Educație</h2>
-        <div class="content"> <ol>
-                <li>Liceu - Mate Info (2018 - 2022)</li>
-                <li>Facultatea de Inginerie (2089 - 2300)</li>
-            </ol>
-        </div> </section>
-</main>
-
-<aside>
-    <h3>Hobby-uri</h3>
-    <p>Gaming, sală, muzică</p>
-</aside>
-
-<footer id="contact">
-    <h2>Contact</h2>
-    <form id="contact-form"> 
-        <label for="name">Nume:</label>
-        <input id="name" type="text" autocomplete="name">
-
-        <label for="email">Email:</label>
-        <input id="email" type="email" autocomplete="email" required>
-
-        <label for="message">Mesaj:</label>
-        <textarea id="message" minlength="10" required></textarea>
-
-        <button type="submit">Trimite</button>
-        <span id="feedback-message"></span> 
-    </form>
-    <p>© 2026 Ion Popescu</p>
-</footer>
-
-<nav>
-    <ul>
-        <li><a href="#about">Despre</a></li>
-        <li><a href="#education">Educație</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><button id="theme-toggle">🌙 Dark Mode</button></li>
-    </ul>
-</nav>
-
-<script src="js/main.js"></script>
-<script src="js/contact_form.js"></script>
-<script src="js/array.js"></script>
-
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>proiect-web</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

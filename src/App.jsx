@@ -1,6 +1,7 @@
 import Card from './Card';
 import { useState } from 'react';
 import QuickNote from './QuickNote';
+import TodoList from './TodoList';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
       <p>Ai apasat de {count} ori</p>
 
       <QuickNote />
+      <TodoList />
 
     </div>
   );

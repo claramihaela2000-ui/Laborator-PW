@@ -1,5 +1,6 @@
 import Card from './Card';
 import { useState } from 'react';
+import QuickNote from './QuickNote';
 
 function App() {
 
@@ -27,6 +28,8 @@ function App() {
 
       <button onClick={() => setCount(count + 1)}>Click</button>
       <p>Ai apasat de {count} ori</p>
+
+      <QuickNote />
 
     </div>
   );

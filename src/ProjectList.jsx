@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
+import Card from './Card';
 function ProjectList() {
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
     useEffect(function () {
         fetch('/Data/projects.json')
             .then(function (response) {
@@ -23,15 +25,31 @@ function ProjectList() {
     return (
         <div className="project-list-container">
             <h2>Proiecte</h2>
+            <input 
+                type="text" 
+                value={searchTerm} 
+                onChange={(e) => setSearchTerm(e.target.value)} 
+                placeholder="Cauta proiect..." 
+            />
             <div className="projects-grid">
-                {projects.map((project) => (
-                    <Card
-                        key={project.id}
-                        titlu={project.nume}
-                        descriere={project.descriere}
-                        imagine={project.imagine}
-                    />
-                ))}
+                {projects
+                    .filter(function(p) {
+                        return p.nume.toLowerCase().includes(searchTerm.toLowerCase());
+                    })
+                    .map((project) => (
+                        <Card
+                            key={project.id}
+                            title={project.nume}
+                            description={project.descriere}
+                            imagine={project.imagine}
+                        />
+                    ))
+                }
+            </div>
+            <div className="statistics">
+                <p>Total proiecte: {projects.length}</p>
+                <p>Finalizate: {projects.filter(p => p.done).length}</p>
+                <p>In lucru: {projects.filter(p => !p.done).length}</p>
             </div>
         </div>
     );

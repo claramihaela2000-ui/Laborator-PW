@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Navbar from './Navbar';
+import NotFound from './pages/NotFound';
 function App() {
  return (
  <BrowserRouter>

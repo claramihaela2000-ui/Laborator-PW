@@ -32,9 +32,10 @@ function ProjectList() {
                 placeholder="Cauta proiect..." 
             />
             <div className="projects-grid">
+                {console.log(projects)}
                 {projects
                     .filter(function(p) {
-                        return p.nume.toLowerCase().includes(searchTerm.toLowerCase());
+                        return p.title.toLowerCase().includes(searchTerm.toLowerCase());
                     })
                     .map((project) => (
                         <Card

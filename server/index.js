@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const PORT = 3000;
+
+app.use(express.json());
+
 // Prima ruta: raspunde la GET /
 app.get('/', function(req, res) {
  res.json({ message: 'Serverul functioneaza!' });
@@ -43,7 +46,44 @@ app.get('/api/projects', function(req, res) {
 });
 
 
+// POST /api/projects - adauga un proiect nou
+app.post('/api/projects', function(req, res) {
+ const newProject = {
+ id: projects.length + 1,
+ title: req.body.title,
+ tech: req.body.tech,
+ done: req.body.done || false,
+ };
+ projects.push(newProject);
+ res.status(201).json(newProject);
+});
+
+// DELETE /api/projects/:id — șterge un proiect după id
+app.delete('/api/projects/:id', function(req, res) {
+    // 1. Luăm id-ul din URL și îl facem număr
+    const id = parseInt(req.params.id);
+    
+    // 2. Găsim unde se află proiectul în listă (indexul)
+    const index = projects.findIndex(p => p.id === id);
+
+    // 3. Verificăm dacă l-am găsit
+    if (index === -1) {
+        // Dacă findIndex returnează -1, înseamnă că nu există
+        return res.status(404).json({ error: 'Not found' });
+    }
+
+    // 4. Dacă există, îl ștergem din array folosind splice
+    projects.splice(index, 1);
+    
+    // 5. Trimitem un mesaj de confirmare
+    res.json({ message: 'Deleted' });
+});
+
+
 // Porneste serverul
 app.listen(PORT, function() {
  console.log('Server pornit pe http://localhost:' + PORT);
 });
+
+
+
